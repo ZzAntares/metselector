@@ -13,6 +13,35 @@ proyecto.
 A continuación se detallan los pasos necesarios para instalar y ejecutar esta
 aplicación en un ambiente de pre-producción.
 
+
+## Preparación de la base de datos
+
+El proyecto utiliza la base de datos [MongoDB](https://docs.mongodb.com/), puede
+revisar la siguiente documentación para consultar instrucciones de instalación:
+
+- [Install MongoDB Community Edition](https://docs.mongodb.com/manual/administration/install-community/)
+
+Una vez instalado el manejador de base de datos es necesario crear la estructura
+y llenarla con los datos iniciales que requiere el proyecto. Por ahora no se
+tiene un sistema de migraciones por lo que será necesario restablecer la base de
+datos a partir de un respaldo.
+
+En la carpeta raíz del [repositorio
+principal](https://github.com/kdchaires/selectormetodologias) se encuentra la
+carpeta `data/` cuyo contenido es el respaldo de la base de datos tal cual se
+generó con la herramienta `mongodump`. Para restablecer este respaldo utilice
+la herramienta `mongorestore` de la siguiente manera:
+
+```sh
+# Remplace "<nombre bd>" con el nombre deseado para su base de datos
+$ mongorestore -d <nombre bd> data/selector_metodologias
+```
+
+Nótese que el comando debe ejecutarse en la carpeta principal del proyecto, es
+decir, dentro de aquella que contiene a la carpeta `data/`. Además el nombre de
+la base de datos que haya elegido debe especificarlo en las configuraciones de
+la aplicación (vea abajo la sección _"Configuración de la aplicación"_).
+
 ## Instalar y ejecutar la aplicación
 
 ### Configuración del `$GOPATH`
