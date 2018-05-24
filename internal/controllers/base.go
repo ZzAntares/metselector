@@ -1,11 +1,9 @@
 package controllers
 
-import (
-	"github.com/globalsign/mgo"
-)
+import "github.com/ZzAntares/metselector/internal/models"
 
 type App struct {
-	Database *mgo.Database
+	Database models.Datastore
 	// TODO Move this to a shared package?
 	// TODO Add a reference to the logger?
 }

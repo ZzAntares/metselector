@@ -36,7 +36,6 @@ func main() {
 	router.HandleFunc("/healthcheck", app.HealthCheckHandler).Methods("GET")
 	router.HandleFunc("/questions", app.QuestionsListHandler).Methods("GET")
 	router.HandleFunc("/suggest", app.SuggestHandler).Methods("POST")
-	router.HandleFunc("/dbcheck", app.DatabaseCheckHandler).Methods("GET")
 
 	headersOk := handlers.AllowedHeaders([]string{"Authorization"})
 	originsOk := handlers.AllowedOrigins([]string{"*"})
