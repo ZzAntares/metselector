@@ -1,3 +1,4 @@
+.env
 vendor/
 
 # Binaries for programs and plugins
