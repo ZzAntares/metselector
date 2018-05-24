@@ -36,6 +36,7 @@ func main() {
 	// TODO Move this to a routes file?
 	router.HandleFunc("/healthcheck", app.HealthCheckHandler).Methods("GET")
 	router.HandleFunc("/questions", app.QuestionsListHandler).Methods("GET")
+	router.HandleFunc("/suggest", app.SuggestHandler).Methods("POST")
 	router.HandleFunc("/dbcheck", app.DatabaseCheckHandler).Methods("GET")
 
 	headersOk := handlers.AllowedHeaders([]string{"Authorization"})

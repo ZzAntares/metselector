@@ -5,17 +5,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 
 	"github.com/ZzAntares/metselector/internal/models"
 )
-
-type App struct {
-	Database *mgo.Database
-	// TODO Move this to a shared package?
-	// TODO Add a reference to the logger?
-}
 
 func (app *App) HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode("Still alive!")
@@ -47,4 +40,8 @@ func (app *App) QuestionsListHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	json.NewEncoder(w).Encode(questions)
+}
+
+func (app *App) SuggestHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode("Call OK!")
 }
