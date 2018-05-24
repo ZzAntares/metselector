@@ -5,12 +5,12 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/globalsign/mgo"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 
 	"github.com/ZzAntares/metselector/internal/controllers"
+	"github.com/ZzAntares/metselector/internal/models"
 )
 
 func main() {
@@ -22,14 +22,13 @@ func main() {
 	}
 
 	// Initialize database
-	session, err := mgo.Dial(
-		os.Getenv("MONGODB_HOST") + ":" + os.Getenv("MONGODB_PORT"))
+	database, err := models.NewDBConnection(os.Getenv("MONGODB_NAME"))
 	if err != nil {
-		log.Println("*** Unable to connect to the database ***")
-		log.Fatal(err)
+		log.Panic(err)
 	}
+	defer database.Session.Close()
 
-	app := &controllers.App{Database: session.DB(os.Getenv("MONGODB_NAME"))}
+	app := &controllers.App{Database: database}
 
 	// Router initialization
 	var router = mux.NewRouter()

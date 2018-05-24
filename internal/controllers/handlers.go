@@ -29,17 +29,7 @@ func (app *App) DatabaseCheckHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *App) QuestionsListHandler(w http.ResponseWriter, r *http.Request) {
-	var questions []models.Question
-	// TODO Read DB settings from environment
-	c := app.Database.C("questions")
-	oerr := c.Find(bson.M{}).All(&questions)
-
-	if oerr != nil {
-		log.Fatal("Can't read from database, check permissions and resource names")
-		return
-	}
-
-	json.NewEncoder(w).Encode(questions)
+	json.NewEncoder(w).Encode(models.AllQuestions(app.Database))
 }
 
 func (app *App) SuggestHandler(w http.ResponseWriter, r *http.Request) {

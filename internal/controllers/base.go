@@ -1,6 +1,8 @@
 package controllers
 
-import "github.com/globalsign/mgo"
+import (
+	"github.com/globalsign/mgo"
+)
 
 type App struct {
 	Database *mgo.Database
