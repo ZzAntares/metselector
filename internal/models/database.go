@@ -8,7 +8,7 @@ import (
 )
 
 type Datastore interface {
-	AllQuestions() []Question
+	AllQuestions() []*Question
 }
 
 type DB struct {
