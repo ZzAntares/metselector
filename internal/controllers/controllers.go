@@ -13,6 +13,8 @@ import (
 
 type App struct {
 	Database *mgo.Database
+	// TODO Move this to a shared package?
+	// TODO Add a reference to the logger?
 }
 
 func (app *App) HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
