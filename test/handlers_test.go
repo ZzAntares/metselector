@@ -5,8 +5,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ZzAntares/metselector/internal/controllers"
-	"github.com/ZzAntares/metselector/internal/models"
+	"github.com/ZzAntares/metselector/controllers"
+	"github.com/ZzAntares/metselector/models"
 )
 
 type mockDB struct{}
