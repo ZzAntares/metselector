@@ -1,6 +1,6 @@
 package controllers
 
-import "github.com/ZzAntares/metselector/internal/models"
+import "github.com/ZzAntares/metselector/models"
 
 type App struct {
 	Database models.Datastore

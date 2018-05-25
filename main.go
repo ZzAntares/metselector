@@ -9,8 +9,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 
-	"github.com/ZzAntares/metselector/internal/controllers"
-	"github.com/ZzAntares/metselector/internal/models"
+	"github.com/ZzAntares/metselector/controllers"
+	"github.com/ZzAntares/metselector/models"
 )
 
 func main() {
