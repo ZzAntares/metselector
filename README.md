@@ -1,5 +1,7 @@
 # API REST Selector de Metodologías
 
+[![Build Status](https://travis-ci.org/ZzAntares/metselector.svg?branch=master)](https://travis-ci.org/ZzAntares/metselector)
+
 Este proyecto es una aplicación REST programada en el lenguaje Go. Lo ideal es
 que si se desea utilizar este proyecto se descargue en su lugar
 [`kdchaires/selectormetodologias`](https://github.com/kdchaires/selectormetodologias)
